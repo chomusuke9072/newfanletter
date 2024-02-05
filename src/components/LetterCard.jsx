@@ -32,7 +32,7 @@ const LetterWrapper = styled.li`
   gap: 1rem;
   color: white;
   padding: 1rem;
-  border: 1px solid black;
+  border: 1px solid #8d7a57e4;
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -67,7 +67,7 @@ const NicknameAndDate = styled.div`
 `;
 
 const Content = styled.p`
-  background-color: black;
+  background-color: #8d7a57e4;
   border-radius: 0.5rem;
   padding: 1rem;
   margin-left: 4rem;
