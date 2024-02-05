@@ -1,9 +1,6 @@
-import { useState } from "react";
 import styled, { css } from "styled-components";
 
-export default function Tabs() {
-  const [actibeMember, setActiveMember] = useState("Kiin");
-
+export default function Tabs({ activeMember, setActiveMember }) {
   const onActiveMember = (e) => {
     if (e.target === e.currentTarget) return;
 
@@ -12,11 +9,11 @@ export default function Tabs() {
 
   return (
     <TabsWrapper onClick={onActiveMember}>
-      <Tap $actibeMember={actibeMember}>Kiin</Tap>
-      <Tap $actibeMember={actibeMember}>Canyon</Tap>
-      <Tap $actibeMember={actibeMember}>Chovy</Tap>
-      <Tap $actibeMember={actibeMember}>Peyz</Tap>
-      <Tap $actibeMember={actibeMember}>Lehends</Tap>
+      <Tap $actibeMember={activeMember}>Kiin</Tap>
+      <Tap $actibeMember={activeMember}>Canyon</Tap>
+      <Tap $actibeMember={activeMember}>Chovy</Tap>
+      <Tap $actibeMember={activeMember}>Peyz</Tap>
+      <Tap $actibeMember={activeMember}>Lehends</Tap>
     </TabsWrapper>
   );
 }
