@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
+import Button from "./common/Button";
 
 export default function AddForm({ setLetters }) {
   const [nickname, setNickname] = useState("");
@@ -54,9 +55,7 @@ export default function AddForm({ setLetters }) {
           <option>Lehends</option>
         </select>
       </SelectWrapper>
-      <BtnWrapper>
-        <button>팬레터 등록</button>
-      </BtnWrapper>
+      <Button text="팬레터 등록" />
     </Form>
   );
 }
@@ -95,16 +94,4 @@ const InputWrapper = styled.div`
 
 const SelectWrapper = styled(InputWrapper)`
   justify-content: flex-start;
-`;
-
-const BtnWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  & button {
-    background-color: #464646;
-    color: white;
-    font-size: 1rem;
-    padding: 0.3rem 0.8rem;
-  }
 `;
