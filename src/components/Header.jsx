@@ -2,11 +2,11 @@ import Tabs from "./Tabs";
 import styled from "styled-components";
 import Gen from "../assets/Gen.jpg";
 
-export default function Header({ activeMember, setActiveMember }) {
+export default function Header() {
   return (
     <Container>
       <Title>젠지 선수 응원 페이지</Title>
-      <Tabs activeMember={activeMember} setActiveMember={setActiveMember} />
+      <Tabs />
     </Container>
   );
 }

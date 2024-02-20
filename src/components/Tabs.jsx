@@ -1,6 +1,9 @@
+import { MemberContext } from "context/MemberContext";
+import { useContext } from "react";
 import styled, { css } from "styled-components";
 
-export default function Tabs({ activeMember, setActiveMember }) {
+export default function Tabs() {
+  const { activeMember, setActiveMember } = useContext(MemberContext);
   const onActiveMember = (e) => {
     if (e.target === e.currentTarget) return;
 
@@ -9,11 +12,11 @@ export default function Tabs({ activeMember, setActiveMember }) {
 
   return (
     <TabsWrapper onClick={onActiveMember}>
-      <Tap $actibeMember={activeMember}>Kiin</Tap>
-      <Tap $actibeMember={activeMember}>Canyon</Tap>
-      <Tap $actibeMember={activeMember}>Chovy</Tap>
-      <Tap $actibeMember={activeMember}>Peyz</Tap>
-      <Tap $actibeMember={activeMember}>Lehends</Tap>
+      <Tap $activeMember={activeMember}>Kiin</Tap>
+      <Tap $activeMember={activeMember}>Canyon</Tap>
+      <Tap $activeMember={activeMember}>Chovy</Tap>
+      <Tap $activeMember={activeMember}>Peyz</Tap>
+      <Tap $activeMember={activeMember}>Lehends</Tap>
     </TabsWrapper>
   );
 }
@@ -35,7 +38,7 @@ const Tap = styled.li`
   border-radius: 0.5rem;
 
   ${(props) => {
-    if (props.$actibeMember === props.children) {
+    if (props.$activeMember === props.children) {
       return css`
         border: 6px solid #8d7a57e4;
         color: #8d7a57e4;

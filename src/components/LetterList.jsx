@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import LetterCard from "./LetterCard";
 import styled from "styled-components";
+import { LetterContext } from "context/LetterContext";
+import { MemberContext } from "context/MemberContext";
 
-export default function LetterList({ activeMember, letters }) {
+export default function LetterList() {
+  const { activeMember } = useContext(MemberContext);
+  const { letters } = useContext(LetterContext);
   const filteredLetters = letters.filter(
     (letter) => letter.writedTo === activeMember
   );
