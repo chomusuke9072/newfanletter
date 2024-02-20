@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import LetterCard from "./LetterCard";
 import styled from "styled-components";
-import { LetterContext } from "context/LetterContext";
-import { MemberContext } from "context/MemberContext";
+import { useSelector } from "react-redux";
 
 export default function LetterList() {
-  const { activeMember } = useContext(MemberContext);
-  const { letters } = useContext(LetterContext);
+  const activeMember = useSelector((state) => state.member);
+  const letters = useSelector((state) => state.letters);
+
   const filteredLetters = letters.filter(
     (letter) => letter.writedTo === activeMember
   );
